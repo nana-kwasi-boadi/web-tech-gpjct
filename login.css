@@ -1,0 +1,96 @@
+
+body {
+    display: block;
+    text-align: center;
+}
+
+form {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    top: 10rem;
+}
+
+.login-form {
+    border: solid 0.1rem #35A5E4;
+    border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    height: 2.5rem;
+    width: 20rem;
+    margin-top: 0.5rem;
+}
+
+label {
+    font-size: x-large;
+    font-weight: lighter;
+}
+
+input#email {
+    font-size: larger;
+    padding: 2%;
+    margin-bottom: 2rem ;
+}
+
+/* HTML -- myAccount.html */
+input#full-name {
+    font-size: larger;
+    padding: 2%;
+    margin-bottom: 2rem ;
+}
+
+/* HTML -- myAccount.html */
+input#user-role {
+    font-size: larger;
+    padding: 2%;
+    margin-bottom: 2rem ;
+}
+
+input#password {
+    font-size: larger;
+    padding: 2%;
+    margin-bottom: 1rem;
+}
+
+.forgot-password {
+    margin-bottom: 1rem;
+}
+
+
+a {
+    color: black;
+}
+
+a:hover { 
+    color: #35A5E4;
+}
+
+.submit-form {
+    width: 6rem;
+    height: 3rem;
+    background-color: #35A5E4;
+    border: solid 0.1rem #35A5E4;
+    color: white;
+    border-radius: 0.5rem;
+    margin-left: 7rem;
+}
+
+.submit-form:hover {
+    cursor: pointer;
+    border: solid 0.1rem white;
+}
+
+.logo {
+    position: relative;
+    font-size: xx-large;
+    margin-right: 4rem;
+    top: 8rem;
+    font-weight: lighter;
+    justify-content: center;
+}
+
+.logo:hover {
+    cursor: default;
+}
