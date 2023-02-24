@@ -21,8 +21,17 @@
     background-color: white;
     border-bottom: 2px solid #35A5E4; 
 }
+
 .navbar-brand:hover {
     cursor: pointer;
+}
+
+#navbar-account:hover {
+    text-decoration: underline;
+}
+
+#navbar-logout:hover {
+    text-decoration: underline;
 }
 
 #footer{
