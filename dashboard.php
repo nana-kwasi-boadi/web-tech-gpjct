@@ -9,20 +9,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel = "stylesheet" href = "./query-section.css" />
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500&family=Montserrat:wght@200&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500&family=Montserrat:wght@200&display=swap" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
 </head>
 <body>
-    <nav class="navbar " id="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" style="font-family: 'Fraunces', serif;margin-left: 120px;">Dzagli & Co</a>
             <form class="d-flex" role="search" style="margin: 0 auto;" >
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-color: #35A5E4;">
             <button class="btn btn-outline-success" type="submit" style="background-color: #35A5E4;color: white;">Go</button>
-            <a  href = "./myAccount.html" class="navbar-brand" id = "navbar-account" style="padding-left: 250px;">View Account</a>
+            <a  href = "./myAccount.php" class="navbar-brand" id = "navbar-account" style="padding-left: 250px;">View account</a>
             <span class="icon" style="padding-top:8px;color:#35A5E4"><i class="fa fa-user" aria-hidden="true"></i></span>
-                <a href = "./login.html" class="navbar-brand" id = "navbar-logout" style="padding-left: 70px;">Logout</a>
+                <a href = "./login.php" class="navbar-brand" id = "navbar-logout" style="padding-left: 70px;">Logout</a>
                 <span class="icon" style="padding-top:8px;left: 5px;color:#35A5E4;"><i class="fa fa-external-link" aria-hidden="true"></i></span>
             </form>
         </div>
@@ -39,27 +39,48 @@
         <p class="lSide" id="employees" onclick="Employees()">Employees</p> <br>
     </div>
 
+
+    <?php
+
+    include "configuration.php";
+    // Vehicles sold
+    $vehicle_query = mysqli_query($conn, 
+    "SELECT * FROM customercar, payment WHERE customercar.receiptID = payment.receiptID AND payment.paymentDate = NOW()");
+    $vehicles_sold = mysqli_num_rows($vehicle_query);
+
+    // Amount made for the day
+    $amount_query = mysqli_query($conn, "SELECT SUM(amount) AS sum FROM payment WHERE payment.paymentDate = NOW()");
+    $money_made = mysqli_fetch_assoc($amount_query);
+    $sum = $money_made['sum'];
+
+    if (!$sum) {
+        $sum = 0;
+    }
+
+    
+    // Number of employees
+    $employee_query = mysqli_query($conn, "SELECT * FROM employee");
+    $employee_number = mysqli_num_rows($employee_query);
+
+
+    ?>
+
     <!-- SLIDE SHOW-->
     <div class = "slideshow-container">
         <div class = "slideshow-content fade">
             <img class = "images" src="./photos/vehicle.png" style="width:100%">
-            <div class = "slides-queries">Dashboard queries (N0. of vechicles sold for the day)</div>
+            <div class = "slides-queries"><?php echo "" .$vehicles_sold. " Vehicles Sold Today"; ?></div>
         </div>
 
     
         <div class = "slideshow-content fade">
             <img class = "images" src="./photos/money.jpg" width = "774" height = "347px" style="width:100%">
-            <div class = "slides-queries">Dashboard queries (Total amount made for the day)</div>
-        </div>
-    
-        <div class = "slideshow-content fade">
-            <img class = "images" src="./photos/clipboard.jpg" width = "774" height = "347" style="width:100%">
-            <div class = "slides-queries">Dashboard queries (Pending payments)</div>
+            <div class = "slides-queries"><?php echo "$" .$sum. " Made Today"; ?></div>
         </div>
 
         <div class = "slideshow-content fade">
             <img src="./photos/helmet.jpg.webp" width = "774" height = "347" style="width:100%">
-            <div class = "slides-queries">Dashboard queries (Number of employees)</div>
+            <div class = "slides-queries"><?php echo "" .$employee_number. " Active Employees"; ?></div>
         </div>
 
         <!--NEXT AND PREVIOUS BUTTONS-->
