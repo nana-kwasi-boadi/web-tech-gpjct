@@ -168,5 +168,21 @@ input#password {
     box-shadow: 0 0 10px #777777;
 }
 
+#weak-password{
+    visibility: hidden;
+    font-weight: bold;
+    color: red;
+}
+
+#password-details {
+    visibility: hidden;
+    margin-bottom: 2rem;
+    color: red;
+}
+
+#change-pass-form {
+    top: 5%;
+}
+
 
 

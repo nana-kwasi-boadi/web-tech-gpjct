@@ -32,25 +32,42 @@ changeBtn = document.getElementById("change-password");
 // Get the user password
 password = document.getElementById("new-password");
 
+// Get the re-entered password
+repeatedPassword = document.getElementById("repeat-new-password");
+
+// Weak password message
+weakPassword = document.getElementById("weak-password");
+passwordDetails = document.getElementById("password-details");
+
 changeBtn.addEventListener("click", (event) => {
     event.preventDefault();
     validatePassword();
 });
 
 function validatePassword() {
-    //Get Regular expressionf for passwrod
-    let passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[A-Za-z\d\W]{8,}$/;
-    let passwordValue = password.value.trim();
+  //Get Regular expressionf for passwrod
+  let passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[A-Za-z\d\W]{8,}$/;
+  let passwordValue = password.value.trim();
+  let repeatedPasswordValue = repeatedPassword.value.trim();
 
-    if (passwordRegEx.test(passwordValue) != true) {
-        password.style.border = "2px solid red";
-        alert("Weak password \n A strong pasword must be 8-10 characters long \n must contain numbers \n must contain capital laeeters \n must contain special characters")
-    }
-
-    else {
-        password.style.border = "2px solid green";
-        window.location.href = "login.html"; 
-        alert("Password changed successfully");
-    }
+  if ((passwordRegEx.test(passwordValue) != true)) {
+    password.style.border = "2px solid red";
+    weakPassword.style.visibility = "visible";
+    passwordDetails.style.visibility = "visible";
+  }
+  else if (passwordValue != repeatedPasswordValue) {
+    repeatedPasswordValue.
+    alert("password mismatch");
+  }
+  else if (passwordValue.length == 0) {
+    password.style.border = "2px solid red";
+    weakPassword.style.visibility = "visible";
+    passwordDetails.style.visibility = "visible";
+  }
+  else {
+    password.style.border = "2px solid green";
+    window.location.href = "login.html"; 
+    alert("Password changed successfully");
+  }
 }
 
