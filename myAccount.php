@@ -20,7 +20,7 @@
     <!-- Change password-->
     <body>
         <div>
-            <form action = "" method = "">
+            <form id = "view-acc-form" action = "" method = "">
                 <label id = "label-role">User role</label>
                 <br />
                 <input readonly id = "user-role" class = "login-form" type = "email" value = "Inventory manager" />
@@ -37,7 +37,7 @@
                     <a id = "open-modal">Change password</a> 
                 </div>
                 <div>
-                    <a class = "return-to-index" href = "index.php">Return to dashboard</a> 
+                    <a class = "return-to-index" href = "./index.html">Return to dashboard</a> 
                 </div>
             </form>
         </div>
@@ -48,6 +48,12 @@
             <div class = "modal-content">
                 <span class="close">&times;</span>
                 <form id = "change-pass-form" action = "" method = "">
+                    <ul id = "password-details">
+                        <span id = "weak-password">Weak password</span>
+                        <li>Password must be 8-10 characters long</li>
+                        <li>Must contain upper and lower cases</li>
+                        <li>Must contain must contain numbers and special characters</li>
+                    </ul>
                     <label id = "label-new-password">Enter new password</label>
                     <br />
                     <input id = "new-password" class = "login-form" name = "newpass" type = "password" value = ""  />
@@ -60,18 +66,5 @@
                 <form></form>
             </div>
         </div>
-       
-
     </body>
-
-
-
-
-
-
-
-
-
-
-
 </html>
