@@ -8,61 +8,84 @@
         <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500&family=Montserrat:wght@200&display=swap" rel="stylesheet"> 
         <title>Login</title>
     </head>
-    <?php 
-    include "configuration.php";
-
-//check if login form was submited
-//by checking if the submit button element name was sent as part of the request
-
-if (isset($_POST['login'])) {
-    
-	//collection form data
-	$admin_email =  $_POST['admin-email'];
-	$admin_pass = $_POST['admin-password'];
-	
-	$login_sql = "SELECT * FROM administrator WHERE admin_email = '$admin_email' AND admin_password = '$admin_pass'";
-    $login_result = mysqli_query($conn, $login_sql);
-
-    if(mysqli_num_rows($login_result) === 1) {
-        echo "<script>
-            alert('You have successfully logged in!');
-            window.location.href = 'dashboard.php';
-        </script>";
-    }
-
-    else {
-        echo "<script>
-            alert('Incorrect email or password. Please try again.');
-            window.location.href = 'index.php';
-        </script>";
-    }
-
-}
-
-
-?>
 
     <body>
         <p class = "logo" style = "font-family: 'Fraunces', serif; margin-left: 5rem;">Dzagli & Co</h1style></p>
-        <form action = "" method = "POST">
+        <form action = "login_proc.php" method = "">
             <label id = "label-email">Email</label>
-            <br>
-            <input id = "email" class = "login-form" type = "email" name = "admin-email" value = "" />
-            <br>
+            <br />
+            <input id = "email" class = "login-form" type="text" id="uname" name="uname" />
+            <br />
             <label id = "label-password">Password</label>
-            <br>
-            <input id = "password" class = "login-form" type = "password" name = "admin-password" value = "" />
+            <br />
+            <input id = "password" class = "login-form" type = "password" id="upass" name="upass" />
             <div class = "forgot-password">
-                <a onclick = "clickHandler()">Forgot Password?</a> 
+                <a href = "">Forgot Password?</a> 
             </div>
-            <br>
-            <input class = "submit-form" type = "submit" name="login" value = "Login" />
+            <br />
+            <input class = "submit-form"  id="btn" type = "submit" value = "Login" />
         </form>
 
-        <script type="text/javascript">
-            const clickHandler = () => {
-                alert("Please contact your system administrator");
-            };
-          </script>
+
+<?php
+        if (isset($_POST['login_proc'])) 
+{ echo "Wrong Username or Password";}
+
+?>
+
+<script type="text/javascript">
+const uname = document.getElementById("uname");
+const pass= document.getElementById("upass");
+const btn = document.getElementById("btn");
+
+
+function validateEmail() {
+	const email_regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+	if (email_regex.test(uname.value)) {
+		alert("register successful");
+		handleajax();
+
+	}
+	else{
+		alert("invalid email");
+	}
+
+	
+}
+
+const httpreq = new XMLHttpRequest();
+function handleajax() {
+	httpreq.onreadystatechange= handler;
+	const params= `uname=${uname.value}&upass=${pass.value}&register=${btn}`;
+	httpreq.open("POST", "register_proc.php");
+
+httpreq.setRequestHeader(
+  "Content-Type",
+  "application/x-www-form-urlencoded"
+);
+
+httpreq.send(params);
+	
+};
+
+
+
+btn.addEventListener("click", function(){
+	validateEmail();
+});
+function handler() {
+	if (httpreq.readyState === XMLHttpRequest.DONE) {
+		if (httpreq.status === 200) {
+			alert("request sent successfully")
+			
+		}
+		else{
+			alert("uncessful request")
+		}
+		
+	}
+	
+}
+	</script>
     </body>
 </html>

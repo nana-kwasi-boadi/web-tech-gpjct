@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dzagli & Co</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel = "stylesheet" href = "./query-section.css" />
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500&family=Montserrat:wght@200&display=swap" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -22,20 +21,19 @@
             <button class="btn btn-outline-success" type="submit" style="background-color: #35A5E4;color: white;">Go</button>
             <a  href = "./myAccount.php" class="navbar-brand" id = "navbar-account" style="padding-left: 250px;">View account</a>
             <span class="icon" style="padding-top:8px;color:#35A5E4"><i class="fa fa-user" aria-hidden="true"></i></span>
-                <a href = "./login.php" class="navbar-brand" id = "navbar-logout" style="padding-left: 70px;">Logout</a>
+                <a href = "index.php" class="navbar-brand" id = "navbar-logout" style="padding-left: 70px;">Logout</a>
                 <span class="icon" style="padding-top:8px;left: 5px;color:#35A5E4;"><i class="fa fa-external-link" aria-hidden="true"></i></span>
             </form>
         </div>
     </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
     <div class="left-side">
         <p class="lSide" style="background-color: #35A5E4;color: white;padding: 3px;  border-radius: 5px;" id="dashboard" onclick="Dashboard()">Dashboard</p> <br>
         <p class="lSide" id="inventory" onclick="Inventory()" >Inventory</p> <br>
         <p class="lSide" id="products" onclick="Products()">Products</p> <br>
         <p class="lSide" id="storage" onclick="StorageF()">Storage</p> <br>
-        <p class="lSide" id="packing"  onclick="Packing()">Packing</p> <br>
+        <p class="lSide" id="parking"  onclick="Parking()">Parking</p> <br>
         <p class="lSide" id="employees" onclick="Employees()">Employees</p> <br>
     </div>
 
@@ -45,20 +43,15 @@
     include "configuration.php";
     // Vehicles sold
     $vehicle_query = mysqli_query($conn, 
-    "SELECT * FROM customercar, payment WHERE customercar.receiptID = payment.receiptID AND payment.paymentDate = NOW()");
+    "SELECT * from customercar, payment where customercar.receiptID = payment.receiptID and payment.paymentDate = NOW()");
     $vehicles_sold = mysqli_num_rows($vehicle_query);
 
-    // Amount made for the day
-    $amount_query = mysqli_query($conn, "SELECT SUM(amount) AS sum FROM payment WHERE payment.paymentDate = NOW()");
-    $money_made = mysqli_fetch_assoc($amount_query);
-    $sum = $money_made['sum'];
-
-    if (!$sum) {
-        $sum = 0;
-    }
+    // amount made for the day
+    $amount_query = mysqli_query($conn, "SELECT SUM(amount) from payment WHERE payment.paymentDate = NOW()");
+    $money_made = mysqli_num_rows($amount_query);
 
     
-    // Number of employees
+    // number of employees
     $employee_query = mysqli_query($conn, "SELECT * FROM employee");
     $employee_number = mysqli_num_rows($employee_query);
 
@@ -75,7 +68,12 @@
     
         <div class = "slideshow-content fade">
             <img class = "images" src="./photos/money.jpg" width = "774" height = "347px" style="width:100%">
-            <div class = "slides-queries"><?php echo "$" .$sum. " Made Today"; ?></div>
+            <div class = "slides-queries"><?php echo "$" .$money_made. " Made Today"; ?></div>
+        </div>
+    
+        <div class = "slideshow-content fade">
+            <img class = "images" src="./photos/clipboard.jpg" width = "774" height = "347" style="width:100%">
+            <div class = "slides-queries">Dashboard queries (Pending payments)</div>
         </div>
 
         <div class = "slideshow-content fade">

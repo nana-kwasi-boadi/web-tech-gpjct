@@ -1,0 +1,66 @@
+.add-packing-form {
+    padding: 3rem;
+    -moz-box-shadow: 0 0 10px #777777;
+    -webkit-box-shadow: 0 0 10px #777777;
+    box-shadow: 0 0 10px #777777;
+    background-color: #fefefe;
+    margin: 8% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    height: 80%;
+}
+
+label {
+    margin-left: 30%;
+    font-size: x-large;
+    font-weight: lighter;
+}
+
+h1 {
+    margin-left: 40%;
+    margin-bottom: 2rem;
+}
+
+.input-fields {
+    border: solid 0.1rem #35A5E4;
+    border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    height: 2.5rem;
+    width: 20rem;
+    margin-top: 0.5rem; 
+    margin-left: 30%;
+    margin-bottom: 1rem;
+    font-size: large;
+    padding-left: 1rem;
+}
+
+.submit-form {
+    width: 6rem;
+    height: 3rem;
+    background-color: #35A5E4;
+    border: solid 0.1rem #35A5E4;
+    color: white;
+    border-radius: 0.5rem;
+    margin-left: 45%;
+    margin-bottom: 2rem;
+}
+
+.submit-form:hover {
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.return-to-packing {
+    margin-left: 42%;
+}
+
+.return-to-packing {
+    color: black;
+}
+
+.return-to-packing:hover { 
+    color: #35A5E4;
+    cursor: pointer;
+}

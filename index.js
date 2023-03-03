@@ -1,29 +1,27 @@
 function Inventory() {
-    window.location = "inventory.html";
+    window.location.href = "inventory.php";
   }
-
   
   function Dashboard() {
-    window.location = "index.html";
+    window.location.href = "dashboard.php";
   }
 
-
   function Products() {
-    window.location = "products.html";
+    window.location.href = "products.php";
   }
 
 
   function StorageF() {
-    window.location = "storage.html";
+    window.location.href = "storage.php";
   }
 
 
-  function Packing() {
-    window.location = "packing.html";
+  function Parking() {
+    window.location.href = "parking.php";
   }
 
   function Employees() {
-    window.location = "employees.html";
+    window.location.href = "employees.php";
 }
 
 let slideIndex = 0;

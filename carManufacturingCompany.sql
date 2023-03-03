@@ -265,15 +265,15 @@ INSERT INTO payment(receiptID, amount, paymentDate)
 
 INSERT INTO customerCar (chassisNo, customerID, receiptID) 
 VALUES ('78NUHDKJ', 1, 858 ),
-	('23CNSDKFF', 2, 858),
+	('23CNSDKFF', 1, 858),
 	('34PLMIFN', 3, 906),
 	('45KFOMFPS', 4, 917),
-	('76JSNDKD', 5, 906),
+	('76JSNDKD', 3, 906),
 	('93MDJSND', 4, 917),
 	('34JFCJCJ', 5, 945),
-	('03UDDNDJ', 3, 874),
+	('03UDDNDJ', 2, 874),
 	('56BDHSSB', 5, 945),
-	('35MSDNDSN', 4, 858);
+	('35MSDNDSN', 1, 858);
     
 
 INSERT INTO packing (packingID, warehouseID, packingArea, packingZone)

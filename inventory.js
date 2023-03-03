@@ -1,10 +1,10 @@
 function Inventory() {
-    window.location = "inventory.html";
+    window.location.href = "inventory.php";
   }
 
   
   function Dashboard() {
-    window.location = "index.html";
+    window.location.href= "dashboard.php";
   }
 
 
