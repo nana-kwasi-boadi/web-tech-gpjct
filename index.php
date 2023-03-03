@@ -10,21 +10,28 @@
     </head>
 
     <body>
-        <p class = "logo" style = "font-family: 'Fraunces', serif; margin-left: 5rem;">Dzagli & Co</h1style></p>
-        <form action = "login_proc.php" method = "">
+        <form id = "login-form" action = "./index.html" method = "">
+            <p class = "logo" style = "font-family: 'Fraunces', serif; margin-left: 5rem;">Dzagli & Co</h1style></p>
             <label id = "label-email">Email</label>
             <br />
-            <input id = "email" class = "login-form" type="text" id="uname" name="uname" />
+            <input id = "email" class = "login-form" type = "email" name = "admin-email" value = "" />
             <br />
             <label id = "label-password">Password</label>
             <br />
-            <input id = "password" class = "login-form" type = "password" id="upass" name="upass" />
+            <input id = "password" class = "login-form" type = "password" name = "admin-password" value = "" />
             <div class = "forgot-password">
-                <a href = "">Forgot Password?</a> 
+                <a class = "" onclick = "clickHandler()">Forgot Password?</a> 
             </div>
             <br />
-            <input class = "submit-form"  id="btn" type = "submit" value = "Login" />
+            <input class = "submit-form" type = "submit" value = "Login" />
         </form>
+        </div>
+
+        <script type="text/javascript">
+            const clickHandler = () => {
+                alert("Please contact your system administrator");
+            };
+          </script>
 
 
 <?php
