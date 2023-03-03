@@ -1,27 +1,27 @@
 function Inventory() {
-    window.location.href = "inventory.php";
-  }
+  window.location.href = "inventory.php";
+}
   
-  function Dashboard() {
-    window.location.href = "dashboard.php";
+function Dashboard() {
+  window.location.href = "dashboard.php";
+}
+
+function Products() {
+  window.location.href = "products.php";
+}
+
+
+function Storage() {
+  window.location.href = "storage.php";
   }
 
-  function Products() {
-    window.location.href = "products.php";
-  }
 
+function Parking() {
+  window.location.href = "parking.php";
+}
 
-  function StorageF() {
-    window.location.href = "storage.php";
-  }
-
-
-  function Parking() {
-    window.location.href = "parking.php";
-  }
-
-  function Employees() {
-    window.location.href = "employees.php";
+function Employees() {
+  window.location.href = "employees.php";
 }
 
 let slideIndex = 0;

@@ -23,21 +23,21 @@
             <form id = "view-acc-form" action = "" method = "">
                 <label id = "label-role">User role</label>
                 <br />
-                <input readonly id = "user-role" class = "login-form" type = "email" value = "Inventory manager" />
+                <input readonly id = "user-role" class = "login-form" type = "email" value = "Supervisor" />
                 <br />
                 <label id = "label-name">Full name</label>
                 <br />
-                <input readonly id = "full-name" class = "login-form" type = "email" value = "Kwasi Junior" />
+                <input readonly id = "full-name" class = "login-form" type = "email" value = "Bernd" />
                 <br />
                 <label id = "label-email">Email</label>
                 <br />
-                <input readonly id = "email" class = "login-form" type = "email"  value = "kwasi.junior@dzagli-co.com" />
+                <input readonly id = "email" class = "login-form" type = "email"  value = "bernd@gmail.com" />
                 <br />
                 <div class = "forgot-password">
                     <a id = "open-modal">Change password</a> 
                 </div>
                 <div>
-                    <a class = "return-to-index" href = "./index.html">Return to dashboard</a> 
+                    <a class = "return-to-index" href = "./index.php">Return to dashboard</a> 
                 </div>
             </form>
         </div>

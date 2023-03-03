@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <form id = "login-form" action = "./dashboard.php" method = "">
+        <form id = "login-form" action = "./dashboard.php" method = "post">
             <p class = "logo" style = "font-family: 'Fraunces', serif; margin-left: 5rem;">Dzagli & Co</h1style></p>
             <label id = "label-email">Email</label>
             <br />
@@ -32,67 +32,5 @@
                 alert("Please contact your system administrator");
             };
         </script>
-
-
-<?php
-        if (isset($_POST['login_proc'])) 
-{ echo "Wrong Username or Password";}
-
-?>
-
-<script type="text/javascript">
-const uname = document.getElementById("uname");
-const pass= document.getElementById("upass");
-const btn = document.getElementById("btn");
-
-
-function validateEmail() {
-	const email_regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-	if (email_regex.test(uname.value)) {
-		alert("register successful");
-		handleajax();
-
-	}
-	else{
-		alert("invalid email");
-	}
-
-	
-}
-
-const httpreq = new XMLHttpRequest();
-function handleajax() {
-	httpreq.onreadystatechange= handler;
-	const params= `uname=${uname.value}&upass=${pass.value}&register=${btn}`;
-	httpreq.open("POST", "register_proc.php");
-
-httpreq.setRequestHeader(
-  "Content-Type",
-  "application/x-www-form-urlencoded"
-);
-
-httpreq.send(params);
-	
-};
-
-
-
-btn.addEventListener("click", function(){
-	validateEmail();
-});
-function handler() {
-	if (httpreq.readyState === XMLHttpRequest.DONE) {
-		if (httpreq.status === 200) {
-			alert("request sent successfully")
-			
-		}
-		else{
-			alert("uncessful request")
-		}
-		
-	}
-	
-}
-	</script>
     </body>
 </html>
