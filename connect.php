@@ -1,10 +1,10 @@
 <?php
 
 //database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "carmanufacturingcompany";
+$servername = "sql300.epizy.com";
+$username = "epiz_33716553";
+$password = "Du7oVxIS4GJGO";
+$dbname = "epiz_33716553_carManufacturingCompany";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

@@ -1,7 +1,7 @@
-drop database if exists carManufacturingCompany;
+/* drop database if exists carManufacturingCompany;
 
 CREATE DATABASE carManufacturingCompany;
-USE carManufacturingCompany;
+USE carManufacturingCompany; */
 
 /****************************************** TASK 2.2   **********************************************/
 

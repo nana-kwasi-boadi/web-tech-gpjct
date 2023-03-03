@@ -70,11 +70,6 @@
             <img class = "images" src="./photos/money.jpg" width = "774" height = "347px" style="width:100%">
             <div class = "slides-queries"><?php echo "$" .$money_made. " Made Today"; ?></div>
         </div>
-    
-        <div class = "slideshow-content fade">
-            <img class = "images" src="./photos/clipboard.jpg" width = "774" height = "347" style="width:100%">
-            <div class = "slides-queries">Dashboard queries (Pending payments)</div>
-        </div>
 
         <div class = "slideshow-content fade">
             <img src="./photos/helmet.jpg.webp" width = "774" height = "347" style="width:100%">

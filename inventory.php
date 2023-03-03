@@ -40,7 +40,7 @@
             <form class="d-flex" role="search" style="margin: 0 auto;" >
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-color: #35A5E4;">
             <button class="btn btn-outline-success" type="submit" style="background-color: #35A5E4;color: white;">Go</button>
-            <a class="navbar-brand" style="padding-left: 250px;">View Account</a>
+            <a  href = "./myAccount.php" class="navbar-brand" id = "navbar-account" style="padding-left: 250px;">View account</a>
             <span class="icon" style="padding-top:8px;color:#35A5E4"><i class="fa fa-user" aria-hidden="true"></i></span>
                 <a href = "index.php" class="navbar-brand" style="padding-left: 70px;">Logout</a>
                 <span class="icon" style="padding-top:8px;left: 5px;color:#35A5E4;"><i class="fa fa-external-link" aria-hidden="true"></i></span>
@@ -79,6 +79,19 @@
         <td style="text-align:center;" scope="row"><?php echo $row['partName']?> </td>
         <td style="text-align:center;" scope="row"><?php echo $row['cost']?> </td>
         <td style="text-align:center;" scope="row"><?php echo $row['quantity']?> </td>
+        <td style="text-align:center;" scope="row"> 
+        <?php
+            echo ('<button class="btn btn-sm btn-primary text-light edit" data-toggle="modal" class="update_btn" data-target="#update_employee" 
+            onclick= \'location.href="UpdateInventory.php?uid=' . $row["lotID"] . '&materialType='.
+            $row['materialType'].'&partName='.$row['partName'].'&cost='.$row['cost'].
+            '&quantity='.$row['quantity'].' &table=parts&attr=lotID&page=inventory.php"\'>
+            <i class="fa-solid fa-pen-to-square"></i></button>');
+            ?>
+            <?php
+            echo('<button class="btn btn-sm btn-danger text-light delete" data-toggle="modal" data-target="#del_employee"><i class="fa-solid fa-trash" onclick= \'location.href="delete_proc.php?uid=' . $row["lotID"] . 
+            '&table=parts&attr=lotID&page=inventory.php"\'></i></button>');
+            ?>
+            </td> 
     </tr>
   
   <?php } ?>
@@ -91,7 +104,7 @@
         <p class="lSide" id="dashboard" onclick="Dashboard()">Dashboard</p> <br>
         <p class="lSide" id="inventory" style="background-color: #35A5E4;color: white;padding: 3px;  border-radius: 5px;" onclick="Inventory()"> Inventory</p> <br>
         <p class="lSide" id="products" onclick="Products()">Products</p> <br>
-        <p class="lSide" id="storage" onclick="StorageF()">Storage</p> <br>
+        <p class="lSide" id="storage" onclick="Storage()">Storage</p> <br>
         <p class="lSide" id="parking"  onclick="Parking()">Parking</p> <br>
         <p class="lSide" id="employees" onclick="Employees()">Employees</p> <br>
     </div>

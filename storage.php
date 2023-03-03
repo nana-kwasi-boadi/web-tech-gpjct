@@ -37,7 +37,7 @@
             <form class="d-flex" role="search" style="margin: 0 auto;" >
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-color: #35A5E4;">
             <button class="btn btn-outline-success" type="submit" style="background-color: #35A5E4;color: white;">Go</button>
-            <a class="navbar-brand" style="padding-left: 250px;">View Account</a>
+            <a  href = "./myAccount.php" class="navbar-brand" id = "navbar-account" style="padding-left: 250px;">View account</a>
             <span class="icon" style="padding-top:8px;color:#35A5E4"><i class="fa fa-user" aria-hidden="true"></i></span>
                 <a href = "index.php" class="navbar-brand" style="padding-left: 70px;">Logout</a>
                 <span class="icon" style="padding-top:8px;left: 5px;color:#35A5E4;"><i class="fa fa-external-link" aria-hidden="true"></i></span>
@@ -110,7 +110,7 @@ $count = 1;
         <p class="lSide"  id="dashboard" onclick="Dashboard()">Dashboard</p> <br>
         <p class="lSide" id="inventory" onclick="Inventory()" >Inventory</p> <br>
         <p class="lSide" id="products" onclick="Products()" >Products</p> <br>
-        <p class="lSide" id="storage" onclick="StorageF()" style="background-color: #35A5E4;color: white;padding: 3px;  border-radius: 5px;">Storage</p> <br>
+        <p class="lSide" id="storage" onclick="Storage()" style="background-color: #35A5E4;color: white;padding: 3px;  border-radius: 5px;">Storage</p> <br>
         <p class="lSide" id="parking"  onclick="Parking()">Parking</p> <br>
         <p class="lSide" id="employees" onclick="Employees()">Employees</p> <br>
     </div>

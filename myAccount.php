@@ -37,7 +37,7 @@
                     <a id = "open-modal">Change password</a> 
                 </div>
                 <div>
-                    <a class = "return-to-index" href = "./index.php">Return to dashboard</a> 
+                    <a class = "return-to-index" href = "./dashboard.php">Return to dashboard</a> 
                 </div>
             </form>
         </div>
@@ -52,7 +52,7 @@
                         <span id = "weak-password">Weak password</span>
                         <li>Password must be 8-10 characters long</li>
                         <li>Must contain upper and lower cases</li>
-                        <li>Must contain must contain numbers and special characters</li>
+                        <li>Must contain numbers and special characters</li>
                     </ul>
                     <label id = "label-new-password">Enter new password</label>
                     <br />
