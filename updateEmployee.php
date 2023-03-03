@@ -7,7 +7,7 @@
 	<title>Employee</title>
 </head>
 <body>
-    employee (empID, address, tel, email) 
+    
 	<form class = "add-packing-form" action="updateEmployee_proc.php" method="GET">
 	<h1>Update Employee</h1>
 	  <input class = "input-fields" type = "hidden" id = "uname" name = "empID" value = <?php echo $_GET['empID'];?>><br>
