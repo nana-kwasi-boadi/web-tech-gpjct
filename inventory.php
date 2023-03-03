@@ -51,7 +51,6 @@
     <?php
   //  Database connection 
   include "configuration.php"; 
-  echo("I am here");
   $inventory_page = mysqli_query($conn,"SELECT * FROM parts LIMIT 10");
 
 ?>
@@ -71,7 +70,6 @@
  </thead>
 
 <?php
-  echo("I am here");
   while ($row = mysqli_fetch_array($inventory_page)) {
 ?>
 
