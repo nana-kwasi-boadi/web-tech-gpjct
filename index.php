@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <form id = "login-form" action = "./index.html" method = "">
+        <form id = "login-form" action = "./dashboard.php" method = "">
             <p class = "logo" style = "font-family: 'Fraunces', serif; margin-left: 5rem;">Dzagli & Co</h1style></p>
             <label id = "label-email">Email</label>
             <br />
@@ -31,7 +31,7 @@
             const clickHandler = () => {
                 alert("Please contact your system administrator");
             };
-          </script>
+        </script>
 
 
 <?php
