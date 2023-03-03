@@ -79,19 +79,6 @@
         <td style="text-align:center;" scope="row"><?php echo $row['partName']?> </td>
         <td style="text-align:center;" scope="row"><?php echo $row['cost']?> </td>
         <td style="text-align:center;" scope="row"><?php echo $row['quantity']?> </td>
-        <td style="text-align:center;" scope="row"> 
-        <?php
-            echo ('<button class="btn btn-sm btn-primary text-light edit" data-toggle="modal" class="update_btn" data-target="#update_employee" 
-            onclick= \'location.href="UpdateInventory.php?uid=' . $row["lotID"] . '&materialType='.
-            $row['materialType'].'&partName='.$row['partName'].'&cost='.$row['cost'].
-            '&quantity='.$row['quantity'].' &table=parts&attr=lotID&page=inventory.php"\'>
-            <i class="fa-solid fa-pen-to-square"></i></button>');
-            ?>
-            <?php
-            echo('<button class="btn btn-sm btn-danger text-light delete" data-toggle="modal" data-target="#del_employee"><i class="fa-solid fa-trash" onclick= \'location.href="delete_proc.php?uid=' . $row["lotID"] . 
-            '&table=parts&attr=lotID&page=inventory.php"\'></i></button>');
-            ?>
-            </td>
     </tr>
   
   <?php } ?>
